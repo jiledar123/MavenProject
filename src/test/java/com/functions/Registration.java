@@ -51,7 +51,7 @@ public class Registration {
 			//Fill the Full name in text field
 			locator = By.id("name");
 			element = function.isPresent(driver,locator);
-			function.fillInto("Jiledar Bind", element);
+			function.fillInto("User", element);
 			//Fill the Promo code in text field
 			locator = By.id("promoCode");
 			element = function.isPresent(driver,locator);

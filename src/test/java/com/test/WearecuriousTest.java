@@ -29,7 +29,7 @@ public class WearecuriousTest {
 		report = new ExtentReports("Reports/result.html");
 	}
 
-	@Test
+	@Test(priority=0)
 	public void Register() {
 		logger = report.startTest("Register");
 		driver.get(Constants.URL);
@@ -40,7 +40,15 @@ public class WearecuriousTest {
 		logger.log(LogStatus.PASS, "User Registered");
 
 	}
+	@Test(priority=1)
+	public void Login() { 
+		logger = report.startTest("Login");
+		driver.get(Constants.URL);
+		function.loginWearecurio(credentials.get(0), credentials.get(1));
+		logger.log(LogStatus.PASS, "User Logged In");
+		driver.switchTo().defaultContent();
 
+	}
 
 	@AfterTest
 	public void afterTest() {
